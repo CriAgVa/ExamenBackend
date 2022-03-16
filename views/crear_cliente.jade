@@ -1,0 +1,26 @@
+extends layout 
+ 
+block content 
+    h1 #{title} 
+    hr.line
+    div(ng-controller="ClientCtrl")    
+        h1 {{status}}
+        table.table.table-hover.tbC  
+            tbody 
+                tr 
+                    th Nombre 
+                    th Apellido Paterno 
+                    th Apellido Materno 
+                    th Fecha de Nacimiento 
+                    th
+                tr 
+                    td 
+                        input.form-control(type="text" ng-model="cliente.nombre.nombre")
+                    td 
+                        input.form-control(type="text" ng-model="cliente.nombre.apellidoP")
+                    td 
+                        input.form-control(type="text" ng-model="cliente.nombre.apellidoM")
+                    td 
+                        input.form-control(type="date" ng-model="fecha" placeholder="dd-mm-yyyy")
+                    td 
+                        button.btn.btn-success(ng-click="createCliente()") Insertar                

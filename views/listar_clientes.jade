@@ -1,0 +1,44 @@
+extends layout 
+
+block content 
+    h1 #{title}
+    hr.line
+    div(ng-controller="ClientCtrl")     
+        table.table.table-hover.tbC 
+            tbody 
+                tr 
+                    th Nombre 
+                    th Apellido Paterno 
+                    th Apellido Materno 
+                    th Fecha de Nacimiento 
+                    th RFC
+                    th Accion 
+                    th
+                tr(ng-repeat="cliente in clientes")
+                    td 
+                        {{cliente.nombre.nombre}}
+                    td 
+                        {{cliente.nombre.apellidoP}}
+                    td 
+                        {{cliente.nombre.apellidoM}}
+                    td 
+                        {{cliente.f_nacimiento}}
+                    td 
+                        {{cliente.rfc}}
+                    td 
+                        button.btn.btn-primary(ng-click="editCliente($index)") Editar 
+                    td
+                        button.btn.btn-danger(ng-click="deleteCliente($index)") Eliminar 
+                tr(ng-show="updt")
+                    td 
+                        input.form-control(type="text" ng-model="clienteE.nombre.nombre") 
+                    td 
+                        input.form-control(type="text" ng-model="clienteE.nombre.apellidoP") 
+                    td 
+                        input.form-control(type="text" ng-model="clienteE.nombre.apellidoM") 
+                    td 
+                        input.form-control(type="date" ng-model="clienteE.f_nacimiento") 
+                    td 
+                        input.form-control(type="text" ng-model="clienteE.rfc")
+                    td 
+                        button.btn.btn-warning(ng-click="updateCliente()") Actualizar
