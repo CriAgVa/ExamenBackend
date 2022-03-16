@@ -53,7 +53,7 @@
  * @swagger
  * /clientes/:
  *  post:
- *      summary: Creación de un cliente
+ *      summary: Creación de un cliente y generacion de su RFC sin homoclave
  *      tags: [Cliente]
  *      requestBody:
  *          required: true

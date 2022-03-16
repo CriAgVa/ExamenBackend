@@ -8,3 +8,13 @@ html
     script(src='/javascripts/angular/A_Clientes.js')
   body(ng-app="ClientsApp" style="background: #ededed")
     block content
+    block link 
+       ul 
+          li 
+            a(href="http://localhost:3000/") Inicio
+          li
+            a(href="http://localhost:3000/nuevo_cliente") Crear usuario   
+          li
+            a(href="http://localhost:3000/ver_clientes") Listado de usuario (eliminar y actualizar)
+          li 
+            a(href="http://127.0.0.1:3000/api-doc/#/") Swagger

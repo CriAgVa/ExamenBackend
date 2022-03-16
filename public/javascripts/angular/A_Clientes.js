@@ -45,7 +45,6 @@
         //funcion para insertar un cliente a la base de datos
         $scope.createCliente = function(){
             $scope.setBD();
-            $scope.generarRFC();
 
             $http.post("/clientes/", $scope.cliente)
                  .then(function(respuesta){
@@ -61,20 +60,6 @@
                         $scope.cliente = {};
                     }
                  });
-        }
-
-        //funcion para generar el RFC del usuario en el formato esperado 
-        $scope.generarRFC = function(idx){ 
-            var rfc_1, rfc_2, rfc_3, rfc_4, rfc_5, rfc_6;
-            rfc_1 = $scope.cliente.nombre.apellidoP[0] + $scope.cliente.nombre.apellidoP[1];
-            rfc_2 = $scope.cliente.nombre.apellidoM[0];
-            rfc_3 = $scope.cliente.nombre.nombre[0];
-            rfc_4 = $scope.cliente.f_nacimiento[8] + $scope.cliente.f_nacimiento[9];
-            rfc_5 = $scope.cliente.f_nacimiento[3] + $scope.cliente.f_nacimiento[4];
-            rfc_6 = $scope.cliente.f_nacimiento[0] + $scope.cliente.f_nacimiento[1];
-            $scope.rfc = rfc_1 + rfc_2 + rfc_3 + rfc_4 + rfc_5 + rfc_6 + "XXX";
-            $scope.rfc = $scope.rfc.toUpperCase();
-            $scope.cliente.rfc = $scope.rfc;
         }
 
         //funcion para fijar el cliente a editar dentro de la lista de todos los clientes

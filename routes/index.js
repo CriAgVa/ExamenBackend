@@ -5,7 +5,7 @@ var mongoose = require("mongoose");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Bienvenido' });
 });
 
 //pagina de crecion de cliente
