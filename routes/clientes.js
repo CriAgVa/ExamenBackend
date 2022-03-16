@@ -19,7 +19,6 @@ router.get("/", function(req, res){
 
 //funcion para almacenar un nuevo usuario en la base de datos
 router.post("/", function(req, res){
-    
     var clt = req.body;
     var rfc, rfc_1, rfc_2, rfc_3, rfc_4, rfc_5, rfc_6;
     rfc_1 = clt.nombre.apellidoP[0] + clt.nombre.apellidoP[1];
@@ -31,7 +30,6 @@ router.post("/", function(req, res){
     rfc = rfc_1 + rfc_2 + rfc_3 + rfc_4 + rfc_5 + rfc_6 + "XXX";
     rfc = rfc.toUpperCase();
     clt.rfc = rfc;
-    console.log(clt);
     
     var cliente = new Cliente(clt);
     
